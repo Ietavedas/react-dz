@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Input from './input';
 
 class RegistrationForm extends Component{
     constructor(props){
@@ -8,11 +9,23 @@ class RegistrationForm extends Component{
     render(){
         return (
             <form className="form registration">
+            
                 <p className="form__title">Регистрация</p>
 
-                <input className="input" type="text" placeholder="login" />
-                <input className="input" type="password" placeholder="password" />
-                <input className="input" type="email" placeholder="email" />
+                <Input 
+                    type={this.props.params.type.text} 
+                    placeholder={this.props.params.placeholder.login} 
+                    />
+
+                <Input 
+                    type={this.props.params.type.email} 
+                    placeholder={this.props.params.placeholder.email} 
+                    />
+
+                <Input 
+                    type={this.props.params.type.password} 
+                    placeholder={this.props.params.placeholder.password} 
+                    />
 
                 <div className="flex start_full">
                     <input className="button" type="submit" value="Зарегистрироваться" />
