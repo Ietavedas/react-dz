@@ -20,17 +20,32 @@ import './App.css';
 //   }
 // }
 
-const API = 'http://sfs.dev.unit6.ru/swagger/v1/swagger.json';
+// const API = 'http://sfs.dev.unit6.ru/swagger/v1/swagger.json';
+// const API = 'http://sfs.dev.unit6.ru/requestforms';
 const options = {
+    mode: 'no-cors',
     method: 'POST',
+    // 'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'application/*+json; charset=utf-8',
+    // body: null
     body: JSON.stringify({
-        userName: "string",
-        email: "string",
-        password: "string"
-      }),
-    headers: new Headers({
-        'Content-Type': 'application/json'
-    })
+        "id": "string",
+        "firstName": "string",
+        "middleName": "string",
+        "lastName": "string",
+        "country": "string",
+        "city": "string",
+        "street": "string",
+        "house": "string",
+        "appartment": "string",
+        "zip": "string",
+        "date": "2018-07-30T19:15:42.884Z"
+      })
+    // headers: new Headers({
+    //     'mode': 'no-cors',
+    //     'Access-Control-Allow-Origin': '*',
+    //     'Content-Type': 'application/json'
+    // })
 }
 
 class App extends Component{
@@ -41,12 +56,12 @@ class App extends Component{
         };
     }
 
-    componentDidMount(){
-        fetch(API)
-            .then(response => response.json())
-            .then(data => this.setState({data}))
-            .then(data => console.log(this.state))
-    }
+    // componentDidMount(){
+    //     fetch(API)
+    //         .then(response => response.json())
+    //         .then(data => this.setState({data}))
+    //         .then(data => console.log(this.state))
+    // }
 
     render(){
         // console.log(this.state)
